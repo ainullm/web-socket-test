@@ -1,6 +1,3 @@
-# **📋 README.md untuk GitHub Repository**
-
-```markdown
 # 🖥️ Web Socket Programming Assignment
 
 **Tugas Ujian Akhir Semester - Komunikasi & Jaringan Komputer**  
@@ -53,7 +50,7 @@ python --version
 ### **2. Menjalankan Single-Client Server**
 ```bash
 # Jalankan server
-python single_client_web_server.py
+python single_server.py
 
 # Server akan berjalan di port 8080
 # Output: Server berjalan di port 8080...
@@ -73,7 +70,7 @@ curl http://localhost:8080/file-tidak-ada.html
 ### **4. Menjalankan Multi-Client Server**
 ```bash
 # Jalankan server concurrent
-python multi_client_web_server.py
+python multi_server.py
 
 # Server akan berjalan di port 8080
 # Output: Multi-Client Web Server ready...
@@ -103,8 +100,8 @@ curl http://localhost:8080/ &
 ## 🔧 Testing Concurrent (Advanced)
 
 ### **Test dengan Script Python:**
+Buat file `test_concurrent.py`:
 ```python
-# test_concurrent.py
 import threading
 import requests
 
@@ -129,7 +126,12 @@ for t in threads:
     t.join()
 ```
 
-### **Hasil Testing Concurrent:**
+Jalankan:
+```bash
+python test_concurrent.py
+```
+
+### **Hasil Testing Concurrent yang Berhasil:**
 ```
 [DEBUG] Thread-1 akan delay 1.3 detik
 [DEBUG] Thread-2 akan delay 1.6 detik
@@ -164,6 +166,23 @@ for t in threads:
 4. ✅ **Error Handling**: 404, 403, 500 responses
 5. ✅ **Concurrency Proof**: "Total aktif" mencapai 6 threads
 
+## 📋 File Testing yang Diperlukan
+
+### **index.html**
+```html
+<!DOCTYPE html>
+<html>
+<head><title>Test Server</title></head>
+<body><h1>Hello from Web Server!</h1></body>
+</html>
+```
+
+### **test.txt**
+```
+Ini adalah file teks untuk testing.
+Web server concurrent berhasil!
+```
+
 ## 📚 Spesifikasi Teknis
 
 - **Bahasa**: Python 3.x
@@ -179,49 +198,9 @@ Tugas Akademik - Politeknik Elektronika Negeri Surabaya
 **Ainul M.**  
 *Magister Terapan Teknik Informatika & Komputer*  
 *Politeknik Elektronika Negeri Surabaya*
-```
 
 ---
 
-## 🚀 **Cara Upload ke GitHub:**
-
-### **1. Buat repository baru di GitHub:**
-- Nama: `web-socket-test`
-- Public repository
-- Optional: Add README.md
-
-### **2. Upload file ke GitHub:**
-```bash
-# Inisialisasi git
-git init
-
-# Tambahkan semua file
-git add .
-
-# Commit
-git commit -m "Initial commit: Web Socket Programming Assignment"
-
-# Link ke repository GitHub
-git remote add origin https://github.com/ainullm/web-socket-test.git
-
-# Push ke GitHub
-git branch -M main
-git push -u origin main
-```
-
-### **3. File yang perlu diupload:**
-1. `single_client_web_server.py`
-2. `multi_client_web_server.py` 
-3. `index.html`
-4. `test.txt`
-5. `README.md` (dokumentasi ini)
-
----
-
-**README.md ini sudah lengkap dengan:**  
-✅ Instruksi penggunaan step-by-step  
-✅ Contoh command untuk testing  
-✅ Perbandingan single vs multi  
-✅ Contoh output log  
-✅ Spesifikasi teknis  
-✅ Cara upload ke GitHub
+## 🔗 Link Penting
+- Repository: https://github.com/ainullm/web-socket-test
+- Referensi: Computer Networking: A Top-Down Approach (Kurose & Ross)
